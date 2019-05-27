@@ -55,30 +55,36 @@ GO
 ALTER TABLE Plantation_Manager ADD CONSTRAINT FK_Manager_Plantation
     FOREIGN KEY (Plantation_ID)
     REFERENCES Plantation(Plantation_ID)
+    ON DELETE CASCADE
 ;
 
 ALTER TABLE Plantation_Product ADD CONSTRAINT FK_Product_Variety
     FOREIGN KEY (Coffee_Variety_ID)
     REFERENCES Coffee_Variety(Coffee_Variety_ID)
+    ON DELETE CASCADE
 ;
 
 ALTER TABLE Plantation_Product ADD CONSTRAINT FK_Product_Plantation
     FOREIGN KEY (Plantation_ID)
     REFERENCES Plantation(Plantation_ID)
+    ON DELETE CASCADE
 ;
 
 ALTER TABLE Company_Order ADD CONSTRAINT FK_Order_Company
     FOREIGN KEY (Company_ID)
     REFERENCES Company(Company_ID)
+    ON DELETE CASCADE
 ;
 
 ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Product
     FOREIGN KEY (Product_ID)
     REFERENCES Plantation_Product(Plantation_Product_ID)
+    ON DELETE CASCADE
 ;
 
-ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Company
+ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Order
     FOREIGN KEY (Order_ID)
     REFERENCES Company_Order(Company_Order_ID)
+    ON DELETE CASCADE
 ;
 GO
