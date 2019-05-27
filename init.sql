@@ -64,3 +64,36 @@ INSERT INTO Plantation_Product(Plantation_Product_ID, Price_Per_KG, Coffee_Varie
 INSERT INTO Plantation_Product(Plantation_Product_ID, Price_Per_KG, Coffee_Variety_ID, Plantation_ID)
     VALUES (8, 22, 1, 4)
 ;
+
+INSERT INTO Company(Company_ID, Name, Description, Address)
+    VALUES (1, 'Nescafe', 'Nescafe description', 'Nescafe address')
+;
+INSERT INTO Company(Company_ID, Name, Description, Address)
+    VALUES (2, 'Lavazza', 'Lavazza description', 'Lavazza address')
+;
+INSERT INTO Company(Company_ID, Name, Description, Address)
+    VALUES (3, 'Jardin', 'Jardin description', 'Jardin address')
+;
+
+INSERT INTO Company_Order(Company_Order_ID, Company_ID)
+    VALUES (1, 1)
+;
+INSERT INTO Company_Order(Company_Order_ID, Company_ID)
+    VALUES (2, 2)
+;
+INSERT INTO Company_Order(Company_Order_ID, Company_ID)
+    VALUES (3, 3)
+;
+
+INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+    VALUES (1, 0, 100, 1, 1)
+;
+INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+    VALUES (2, 0, 50, 2, 1)
+;
+INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+    VALUES (3, 0, 200, 3, 2)
+;
+INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+    VALUES (4, 0, 150, 7, 3)
+;
