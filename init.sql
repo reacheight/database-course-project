@@ -75,7 +75,7 @@ ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Product
     REFERENCES Plantation_Product(Plantation_Product_ID)
 ;
 
-ALTER TABLE Batch ADD CONSTRAINT FK_Barch_Company
+ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Company
     FOREIGN KEY (Order_ID)
     REFERENCES Company_Order(Company_Order_ID)
 ;
