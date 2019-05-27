@@ -7,7 +7,7 @@ CREATE TABLE Plantation(
     Plantation_ID   INTEGER     NOT NULL    PRIMARY KEY,
     Name            VARCHAR(30) NOT NULL,
     Address         VARCHAR(50) NOT NULL,
-    Port_Adress     VARCHAR(50) NOT NULL
+    Port_Address     VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Company(
