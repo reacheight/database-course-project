@@ -39,11 +39,11 @@ CREATE TABLE Plantation_Product(
 
 CREATE TABLE Company_Order(
     Company_Order_ID    INTEGER    NOT NULL    PRIMARY KEY,
-    Date                DATETIME   DEFAULT GETDATE()   NOT NULL,
+    Order_Date                DATETIME   DEFAULT GETDATE()   NOT NULL,
     Company_ID          INTEGER    NOT NULL
 );
 
-CREATE TABLE Batch(
+CREATE TABLE Order_Batch(
     Batch_ID        INTEGER    NOT NULL    PRIMARY KEY,
     Is_Arrived      INTEGER    NOT NULL,
     Weight_In_KG    INTEGER    NOT NULL,
@@ -76,13 +76,13 @@ ALTER TABLE Company_Order ADD CONSTRAINT FK_Order_Company
     ON DELETE CASCADE
 ;
 
-ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Product
+ALTER TABLE Order_Batch ADD CONSTRAINT FK_Batch_Product
     FOREIGN KEY (Product_ID)
     REFERENCES Plantation_Product(Plantation_Product_ID)
     ON DELETE CASCADE
 ;
 
-ALTER TABLE Batch ADD CONSTRAINT FK_Batch_Order
+ALTER TABLE Order_Batch ADD CONSTRAINT FK_Batch_Order
     FOREIGN KEY (Order_ID)
     REFERENCES Company_Order(Company_Order_ID)
     ON DELETE CASCADE

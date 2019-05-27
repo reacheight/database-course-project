@@ -85,15 +85,15 @@ INSERT INTO Company_Order(Company_Order_ID, Company_ID)
     VALUES (3, 3)
 ;
 
-INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+INSERT INTO Order_Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
     VALUES (1, 0, 100, 1, 1)
 ;
-INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+INSERT INTO Order_Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
     VALUES (2, 0, 50, 2, 1)
 ;
-INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+INSERT INTO Order_Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
     VALUES (3, 0, 200, 3, 2)
 ;
-INSERT INTO Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
+INSERT INTO Order_Batch(Batch_ID, Is_Arrived, Weight_In_KG, Product_ID, Order_ID)
     VALUES (4, 0, 150, 7, 3)
 ;
