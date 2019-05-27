@@ -11,26 +11,28 @@ CREATE TABLE Plantation(
 );
 
 CREATE TABLE Company(
-    Company_ID    INTEGER     NOT NULL    PRIMARY KEY,
-    Name          VARCHAR(30) NOT NULL,
-    Address       VARCHAR(50) NOT NULL
+    Company_ID    INTEGER       NOT NULL    PRIMARY KEY,
+    Name          VARCHAR(30)   NOT NULL,
+    Description   VARCHAR(100),
+    Address       VARCHAR(50)   NOT NULL
 );
 
 CREATE TABLE Coffee_Variety(
     Coffee_Variety_ID    INTEGER     NOT NULL    PRIMARY KEY,
-    Name                 VARCHAR(30) NOT NULL
+    Name                 VARCHAR(30) NOT NULL    UNIQUE
 );
 
 CREATE TABLE Plantation_Manager(
     Plantation_Manager_ID    INTEGER     NOT NULL    PRIMARY KEY,
     First_Name               VARCHAR(30) NOT NULL,
     Last_Name                Varchar(30) NOT NULL,
+    Age                      INTEGER     NOT NULL,
     Plantation_ID            INTEGER     NOT NULL
 );
 
 CREATE TABLE Plantation_Product(
     Plantation_Product_ID        INTEGER    NOT NULL    PRIMARY KEY,
-    Price                        INTEGER    NOT NULL,
+    Price_Per_KG                 INTEGER    NOT NULL,
     Coffee_Variety_ID            INTEGER    NOT NULL,
     Plantation_ID                INTEGER    NOT NULL
 );
@@ -42,11 +44,11 @@ CREATE TABLE Company_Order(
 );
 
 CREATE TABLE Batch(
-    Batch_ID    INTEGER    NOT NULL    PRIMARY KEY,
-    Is_Arrived  INTEGER    NOT NULL,
-    Quantity    INTEGER    NOT NULL,
-    Product_ID  INTEGER    NOT NULL,
-    Order_ID    INTEGER    NOT NULL
+    Batch_ID        INTEGER    NOT NULL    PRIMARY KEY,
+    Is_Arrived      INTEGER    NOT NULL,
+    Weight_In_KG    INTEGER    NOT NULL,
+    Product_ID      INTEGER    NOT NULL,
+    Order_ID        INTEGER    NOT NULL
 );
 GO
 
