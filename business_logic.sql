@@ -67,3 +67,25 @@ AS
 
     UPDATE Company_Order SET Total_Price = Total_Price + (@product_price * @product_weight)
         WHERE Company_Order_ID = (SELECT Order_ID FROM INSERTED);
+
+GO
+
+CREATE VIEW V_ProductList(Product_ID, Coffee_Variety_Name, Price_Per_KG, Plantation_Name, Plantation_Address, Plantation_Port_Address)
+AS
+    SELECT product.Plantation_Product_ID, variety.Name, product.Price_Per_KG, Plantation.Name, Plantation.Address, Plantation.Port_Address
+        FROM Coffee_Variety as variety, Plantation_Product as product, Plantation
+            WHERE product.Coffee_Variety_ID = variety.Coffee_Variety_ID AND product.Plantation_ID = Plantation.Plantation_ID;
+
+GO
+
+CREATE VIEW V_BatchList(Batch_ID, Coffee_Variety_Name, Total_Price, Weight, Port_Address, Is_Arrived, Copany_Name)
+AS
+    SELECT batch.Order_Batch_ID, variety.name, product.Price_Per_KG * batch.Weight_In_KG, batch.Weight_In_KG, Plantation.Port_Address, batch.Is_Arrived, Company.Name
+        FROM Coffee_Variety as variety, Plantation_Product as product, Plantation, Order_Batch as batch, Company, Company_Order
+            WHERE variety.Coffee_Variety_ID = product.Coffee_Variety_ID
+                AND Plantation.Plantation_ID = product.Plantation_ID
+                AND batch.Product_ID = product.Plantation_Product_ID
+                AND batch.Order_ID = Company_Order.Company_Order_ID
+                AND Company_Order.Company_ID = Company.Company_ID;
+
+GO
