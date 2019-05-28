@@ -45,7 +45,7 @@ CREATE TABLE Company_Order(
 );
 
 CREATE TABLE Order_Batch(
-    Batch_ID        INTEGER    NOT NULL    PRIMARY KEY,
+    Order_Batch_ID        INTEGER    NOT NULL    PRIMARY KEY,
     Is_Arrived      INTEGER    NOT NULL,
     Weight_In_KG    INTEGER    NOT NULL,
     Product_ID      INTEGER    NOT NULL,
