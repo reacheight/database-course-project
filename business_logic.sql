@@ -26,3 +26,17 @@ BEGIN
 END;
 
 GO
+
+CREATE FUNCTION AreAllOrderBatchesArrived (@order_id INTEGER)
+RETURNS INTEGER
+AS
+BEGIN
+    DECLARE @NotArrivedOrderBatchesCount INTEGER;
+    SELECT @NotArrivedOrderBatchesCount = COUNT(*) FROM Order_Batch
+    WHERE Order_Batch.Order_ID = @order_id AND Order_Batch.Is_Arrived = 0;
+
+    IF @NotArrivedOrderBatchesCount = 0 RETURN 1;
+    RETURN 0;
+END;
+
+GO
