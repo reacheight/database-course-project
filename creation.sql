@@ -39,14 +39,16 @@ CREATE TABLE Plantation_Product(
 
 CREATE TABLE Company_Order(
     Company_Order_ID    INTEGER    NOT NULL    PRIMARY KEY,
-    Order_Date          DATETIME DEFAULT GETDATE()   NOT NULL,
-    Is_Completed        INTEGER DEFAULT 0    NOT NULL,
+    Start_Date          DATETIME   DEFAULT GETDATE()   NOT NULL,
+    End_Date            DATETIME,
+    Is_Completed        INTEGER    DEFAULT 0    NOT NULL,
+    Total_Price         INTEGER    DEFAULT 0    NOT NULL,
     Company_ID          INTEGER    NOT NULL
 );
 
 CREATE TABLE Order_Batch(
     Order_Batch_ID        INTEGER    NOT NULL    PRIMARY KEY,
-    Is_Arrived      INTEGER    NOT NULL,
+    Is_Arrived      INTEGER DEFAULT 0    NOT NULL,
     Weight_In_KG    INTEGER    NOT NULL,
     Product_ID      INTEGER    NOT NULL,
     Order_ID        INTEGER    NOT NULL
