@@ -21,7 +21,7 @@ BEGIN
     DECLARE @Result INTEGER;
     SELECT @Result = COUNT(*) FROM Order_Batch JOIN Plantation_Product
         ON Order_Batch.Product_ID = Plantation_Product.Plantation_Product_ID
-        WHERE Order_Batch.Is_Arrived = 0;
+        WHERE Order_Batch.Is_Arrived = 0 AND Plantation_Product.Plantation_ID = @plantation_id;
     RETURN @Result;
 END;
 
