@@ -39,7 +39,8 @@ CREATE TABLE Plantation_Product(
 
 CREATE TABLE Company_Order(
     Company_Order_ID    INTEGER    NOT NULL    PRIMARY KEY,
-    Order_Date                DATETIME   DEFAULT GETDATE()   NOT NULL,
+    Order_Date          DATETIME DEFAULT GETDATE()   NOT NULL,
+    Is_Completed        INTEGER DEFAULT 0    NOT NULL,
     Company_ID          INTEGER    NOT NULL
 );
 
