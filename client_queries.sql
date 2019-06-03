@@ -66,3 +66,11 @@ SELECT Plantation_Manager.First_Name, Plantation_Manager.Last_Name, Plantation_M
 SELECT *
     FROM V_BatchList
     WHERE Weight > 10 AND Is_Arrived = 1;
+
+/* общая информация компании о плантациях, их менеджерах и компаниях-клиентах*/
+SELECT 'Plantation' as Type, Description FROM Plantation WHERE Description IS NOT NULL AND Description <> ''
+UNION
+SELECT 'Managar' as Type, Description FROM Plantation_Manager WHERE Description IS NOT NULL AND Description <> ''
+UNION
+SELECT 'Company' as Type, Description FROM Company WHERE Description IS NOT NULL AND Description <> ''
+ORDER BY Type;
