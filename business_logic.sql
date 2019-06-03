@@ -78,9 +78,9 @@ AS
 
 GO
 
-CREATE VIEW V_BatchList(Batch_ID, Coffee_Variety_Name, Total_Price, Weight, Port_Address, Is_Arrived, Copany_Name)
+CREATE VIEW V_BatchList(Batch_ID, Order_ID, Coffee_Variety_Name, Total_Price, Weight, Port_Address, Is_Arrived, Copany_Name)
 AS
-    SELECT batch.Order_Batch_ID, variety.name, product.Price_Per_KG * batch.Weight_In_KG, batch.Weight_In_KG, Plantation.Port_Address, batch.Is_Arrived, Company.Name
+    SELECT batch.Order_Batch_ID, Company_Order.Company_Order_ID, variety.name, product.Price_Per_KG * batch.Weight_In_KG, batch.Weight_In_KG, Plantation.Port_Address, batch.Is_Arrived, Company.Name
         FROM Coffee_Variety as variety, Plantation_Product as product, Plantation, Order_Batch as batch, Company, Company_Order
             WHERE variety.Coffee_Variety_ID = product.Coffee_Variety_ID
                 AND Plantation.Plantation_ID = product.Plantation_ID
