@@ -7,14 +7,15 @@ CREATE TABLE Plantation(
     Plantation_ID   INTEGER     NOT NULL    PRIMARY KEY,
     Name            VARCHAR(30) NOT NULL,
     Address         VARCHAR(50) NOT NULL,
-    Port_Address     VARCHAR(50) NOT NULL
+    Port_Address    VARCHAR(50) NOT NULL,
+    Description     VARCHAR(100)
 );
 
 CREATE TABLE Company(
     Company_ID    INTEGER       NOT NULL    PRIMARY KEY,
     Name          VARCHAR(30)   NOT NULL,
-    Description   VARCHAR(100),
-    Address       VARCHAR(50)   NOT NULL
+    Address       VARCHAR(50)   NOT NULL,
+    Description   VARCHAR(100)
 );
 
 CREATE TABLE Coffee_Variety(
@@ -27,6 +28,7 @@ CREATE TABLE Plantation_Manager(
     First_Name               VARCHAR(30) NOT NULL,
     Last_Name                Varchar(30) NOT NULL,
     Age                      INTEGER     NOT NULL,
+    Description              VARCHAR(100),
     Plantation_ID            INTEGER     NOT NULL
 );
 
