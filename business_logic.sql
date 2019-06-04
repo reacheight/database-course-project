@@ -90,9 +90,9 @@ AS
 
 GO
 
-CREATE VIEW V_CompanyList(Company_ID, Company_Name, Company_Description, Company_Address, Order_Count, Avarage_Order_Price)
+CREATE VIEW V_CompanyList(Company_ID, Company_Name, Company_Description, Company_Address, Order_Count, Avarage_Order_Price, Total_Orders_Price)
 AS
-    SELECT Company.Company_ID, Company.Name, Company.Description, Company.Address, COUNT(Company_Order.Company_Order_ID), AVG(Company_Order.Total_Price)
+    SELECT Company.Company_ID, Company.Name, Company.Description, Company.Address, COUNT(Company_Order.Company_Order_ID), AVG(Company_Order.Total_Price), SUM(Company_Order.Total_Price)
         FROM Company LEFT OUTER JOIN Company_Order ON Company.Company_ID = Company_Order.Company_ID
         GROUP BY Company.Company_ID, Company.Name, Company.Description, Company.Address;
 
