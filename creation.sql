@@ -93,3 +93,12 @@ ALTER TABLE Order_Batch ADD CONSTRAINT FK_Batch_Order
     ON DELETE CASCADE
 ;
 GO
+
+CREATE INDEX I_Order
+ON Company_Order (Is_Completed, Total_Price)
+
+CREATE INDEX I_Batch
+ON Order_Batch (Is_Arrived)
+
+CREATE INDEX I_Plantation
+ON Plantation(Address, Port_Address)
